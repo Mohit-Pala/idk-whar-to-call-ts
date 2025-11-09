@@ -6,14 +6,14 @@ import (
 	thinkofanameforts "github.com/Mohit-Pala/idk-whar-to-call-ts"
 )
 
-func killProcess(pid int) (bool, error) {
+func killProcess(pid int) (string, error) {
 	if pid <= 0 {
-		return false, fmt.Errorf("invalid pid")
+		return "", fmt.Errorf("invalid pid")
 	}
 
-	_, err := thinkofanameforts.ExecuteCommand("kill", strconv.Itoa(pid))
+	out, err := thinkofanameforts.ExecuteCommand("kill", strconv.Itoa(pid))
 	if err != nil {
-		return false, err
+		return "", err
 	}
-	return true, nil
+	return string(out), nil
 }
