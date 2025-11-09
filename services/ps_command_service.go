@@ -3,7 +3,7 @@ package services
 import (
 	"fmt"
 	"strconv"
-	thinkofanameforts "github.com/Mohit-Pala/idk-whar-to-call-ts"
+	"github.com/Mohit-Pala/idk-whar-to-call-ts"
 )
 
 func killProcess(pid int) (string, error) {
