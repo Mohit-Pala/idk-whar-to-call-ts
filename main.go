@@ -7,7 +7,7 @@ import (
 )
 
 // genertic method, to exec temrinal commands
-func executeCommand(command string, args ...string) ([]byte, error) {
+func ExecuteCommand(command string, args ...string) ([]byte, error) {
 	cmd := exec.Command(command, args...)
 	// out,err := cmd.Output()
 	out, err := cmd.CombinedOutput()
