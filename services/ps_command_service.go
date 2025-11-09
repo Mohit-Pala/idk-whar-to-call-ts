@@ -2,11 +2,13 @@ package services
 
 import (
 	"fmt"
-	"strconv"
 	"github.com/Mohit-Pala/idk-whar-to-call-ts"
+	"strconv"
 )
 
-func killProcess(pid int) (string, error) {
+type PsCommandService struct{}
+
+func (s *PsCommandService) KillProcess(pid int) (string, error) {
 	if pid <= 0 {
 		return "", fmt.Errorf("invalid pid")
 	}
